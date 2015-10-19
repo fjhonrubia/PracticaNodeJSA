@@ -14,7 +14,7 @@ var anuncioSchema = mongoose.Schema({
 // Métodos estáticos
 anuncioSchema.statics.lista = function(criterios, skip, limit, sort) {
 
-  return new Promise((resolve, reject)=> {
+  return new Promise(function(resolve, reject) {
     // Se crea una nueva consulta con los criterios pasados como parámetro
     var query = Anuncio.find(criterios);
 
@@ -24,7 +24,7 @@ anuncioSchema.statics.lista = function(criterios, skip, limit, sort) {
     query.sort(sort);
 
     // Se ejecuta la consulta y se evalúa el resultado obtenido
-    query.exec((err,rows)=> {
+    query.exec(function(err,rows) {
       if (err) {
         console.error('Anuncio.js - Error listando los anuncios:', err);
         return reject(err);
@@ -38,14 +38,14 @@ anuncioSchema.statics.lista = function(criterios, skip, limit, sort) {
 
 anuncioSchema.statics.listaTags = function() {
 
-  return new Promise((resolve, reject)=> {
+  return new Promise(function(resolve, reject) {
     // Se crea una nueva consulta con los criterios que se han pasados
     var query = Anuncio.find();
 
     query.select('tags');
 
     // Se ejecuta la consulta y se evalúa el resultado obtenido
-    query.exec((err,results)=> {
+    query.exec(function(err,results) {
       if (err) {
         console.error('Aunucio.js - Ha ocurrido un error listando tags:', err);
         return reject(err);
@@ -53,9 +53,9 @@ anuncioSchema.statics.listaTags = function() {
 
       var tags = [];
 
-      results.forEach((item1)=> {
+      results.forEach(function(item1) {
 
-        item1.tags.forEach((item2)=> {
+        item1.tags.forEach(function(item2) {
 
           if (tags.indexOf(item2) === -1) {
             tags.push(item2);

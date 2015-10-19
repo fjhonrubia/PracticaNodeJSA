@@ -31,8 +31,8 @@ require('./models/apiv1/Anuncio.js'); // no es necesario asignarlo a nada
 require('./models/apiv1/Usuario.js'); // no es necesario asignarlo a nada
 require('./models/apiv1/PushToken.js'); // no es necesario asignarlo a nada
 
-app.use('/', routes);
-app.use('/users', users);
+//app.use('/', routes);
+//app.use('/users', users);
 
 app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
 app.use('/apiv1/usuarios', require('./routes/apiv1/usuarios'));

@@ -16,5 +16,5 @@ db.once('open', function() {
 
 });
 
-mongoose.connect('mongodb://localhost/nodepop');
+mongoose.connect('mongodb://adminNodepop:M3t30r1t0@localhost/nodepop');
 

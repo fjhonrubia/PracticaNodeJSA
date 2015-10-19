@@ -10,7 +10,7 @@ var sha256 = require('sha256');
 var db = mongoose.connection;
 
 
-mongoose.connect('mongodb://localhost/nodepop');
+mongoose.connect('mongodb://adminNodepop:M3t30r1t0@localhost/nodepop');
 
 db.once('open', function() {
 
@@ -79,7 +79,7 @@ function initAnuncios(cb) {
 			//Se itera añadiendo un registro en cada caso
 			anunciosObj.anuncios.forEach(function(item) {
                 //Se crea un nuevo anuncio 
-                let anuncio = new Anuncio(item);
+                var anuncio = new Anuncio(item);
 
                 //se guarda el objeto en base de datos
                 anuncio.save(function(err){
@@ -104,7 +104,7 @@ function initUsuarios(cb) {
     // elimino todos
     Usuario.remove({}, function() {
         // aqui cargaríamos al menos un usuario (Usuario.save)
-                let usuario = new Usuario({
+                var usuario = new Usuario({
                     'nombre': 'usr1',
                     'mail': 'email@usr1.com',
                     'pass': sha256('usr1')

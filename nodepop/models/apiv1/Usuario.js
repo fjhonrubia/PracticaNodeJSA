@@ -12,13 +12,13 @@ var usuarioSchema = mongoose.Schema({
 // Métodos de instancia
 usuarioSchema.statics.autenticacion = function(nombre, passEncriptado) {
 
-  return new Promise((resolve, reject)=> {
+  return new Promise(function(resolve, reject) {
     // Creación de consulta con los criterios que se han pasado como parámetro
     var criterios = {
       mail: nombre,
       pass: passEncriptado,
     };
-    Usuario.findOne(criterios, (err, usr)=> {
+    Usuario.findOne(criterios, function(err, usr) {
       if (err) {
         console.error('Usuario.js - Error en la búsqueda del usuario:', err);
         return reject({msg: 'ERROR_SEARCHING_USER', error: err});
@@ -36,14 +36,14 @@ usuarioSchema.statics.autenticacion = function(nombre, passEncriptado) {
 
 usuarioSchema.statics.compruebaUsuario = function(mail) {
 
-  return new Promise((resolve, reject)=> {
+  return new Promise(function(resolve, reject) {
 
     // Creación de consulta con los criterios que se han pasado como parámetro
     var criterios = {
       mail: mail,
     };
 
-    Usuario.findOne(criterios, (err, usr)=> {
+    Usuario.findOne(criterios, function(err, usr) {
       if (err) {
         console.error('Usuario.js - Error en la búsqueda del usuario:', err);
         return reject({msg: 'ERROR_SEARCHING_USER', error: err});

@@ -60,12 +60,12 @@ router.get('/:idiom(es|en)/listaAnuncios', function(req, res) {
 
   // Recuperación de los parámetros del query string y procesamiento
   procesaQS(req.query.tag, req.query.venta, req.query.nombre, req.query.precio)
-      .then((criterios)=> {
+      .then(function(criterios) {
 
         // Configuración de los parámetros de paginación y ordenación
-        let skip = 0;
-        let limit = 0;
-        let sort = '';
+        var skip = 0;
+        var limit = 0;
+        var sort = '';
         if (req.query.start) {
           skip = req.query.start;
         }
@@ -77,14 +77,14 @@ router.get('/:idiom(es|en)/listaAnuncios', function(req, res) {
         }
 
         // Ejecución de la consulta
-        Anuncio.lista(criterios, skip, limit, sort).then((data)=> {
+        Anuncio.lista(criterios, skip, limit, sort).then(function(data) {
           console.log('Anuncios.js - Lista de anuncios:', data);
           res.json({anuncios: data});
 
-        }).catch((err)=> {
+        }).catch(function(err) {
           errores('ANUNCIOS_LIST_ERROR', idioma, err, res);
         });
-      }).catch((err)=> {
+      }).catch(function(err) {
         errores(err.msg, idioma, err, res);
       });
 });
