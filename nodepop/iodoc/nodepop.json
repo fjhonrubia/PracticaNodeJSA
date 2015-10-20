@@ -3,7 +3,7 @@
 	"description": "Nodepop API",
 	"protocol": "rest",
 	"basePath": "http://fjhonrubia.cloudapp.net",
-	"publicPath": "/apiv1",
+	"publicPath": "/apiv2",
 	"resources" : {
 		"Usuarios": {
 			"methods": {
@@ -11,16 +11,16 @@
 					"name": "registrarUsuario",
 					"description": "Almacena un usuario en la base de datos dando su Nombre, Mail y Password.",
 					"httpMethod": "POST",
-					"path": "/usuarios/{idiom}/registrarUsuario",
+					"path": "/usuarios/registrarUsuario",
 				    "parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
-							"default": "en",
+					    "default": "en",
 				            "type":"string",
-							"enum": ["es","en"],
+					    "enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
 		                "nombre": {
 		                    "title":"nombre",
@@ -38,7 +38,7 @@
 		                    "description":"Mail del usuario",
 		                    "location": "query"
 		                },
-						"password": {
+                                "password": {
 		                    "title":"password",
 		                    "required":true,
 		                    "default":"",
@@ -52,16 +52,16 @@
 					"name": "autenticacion",
 					"description": "Autentifica un usuario dado su mail y su password",
 					"httpMethod": "POST",
-					"path": "//{idiom}/autenticacion",
+					"path": "/autenticacion",
 				    "parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
 							"default": "en",
 				            "type":"string",
 							"enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
 		                "mail": {
 		                    "title":"mail",
@@ -89,16 +89,16 @@
 					"name": "registrarToken",
 					"description": "Registra el token pasado como parámetro, así como el usuario si existiese y el sistema (iOS ó Android)",
 					"httpMethod": "PUT",
-					"path": "/tokens/{idiom}/registrarToken",
+					"path": "/tokens/registrarToken",
 					"parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
 							"default": "en",
 				            "type":"string",
 							"enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
 						"token": {
 		                    "title":"token",
@@ -135,16 +135,16 @@
 					"name": "listaAnuncios",
 					"description": "Lista los anuncios almacenados con los criterios especificados",
 					"httpMethod": "GET",
-					"path": "/anuncios/{idiom}/listaAnuncios",
+					"path": "/anuncios/listaAnuncios",
 					"parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
 							"default": "en",
 				            "type":"string",
 							"enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
 						"tag": {
 		                    "title":"tag",
@@ -216,16 +216,16 @@
 					"name": "listaTags",
 					"description": "Lista de todos los Tags de los anuncios",
 					"httpMethod": "GET",
-					"path": "/anuncios/{idiom}/listaTags",
+					"path": "/anuncios/listaTags",
 					"parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
 							"default": "en",
 				            "type":"string",
 							"enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
                       "token": {
                         "title":"token",
@@ -242,16 +242,16 @@
 					"name": "imagen",
 					"description": "Recupera una determinada imagen",
 					"httpMethod": "GET",
-					"path": "/anuncios/{idiom}/images/{imagen}",
+					"path": "/anuncios/images/{imagen}",
 					"parameters": {
-				        "idiom": {
-				            "title":"idiom",
+				        "idioma": {
+				            "title":"idioma",
 				            "required": true,
 							"default": "en",
 				            "type":"string",
 							"enum": ["es","en"],
 				            "description":"Parámetro que indica el idioma en el que se retornan los mensajes de error",
-				            "location": "path"
+				            "location": "header"
 				        },
 						"imagen": {
 							"title":"imagen",

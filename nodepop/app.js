@@ -34,10 +34,10 @@ require('./models/apiv1/PushToken.js'); // no es necesario asignarlo a nada
 //app.use('/', routes);
 //app.use('/users', users);
 
-app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
-app.use('/apiv1/usuarios', require('./routes/apiv1/usuarios'));
-app.use('/apiv1/tokens', require('./routes/apiv1/pushtokens'));
-app.use('/apiv1', require('./routes/apiv1/autenticacion'));
+app.use('/apiv2/anuncios', require('./routes/apiv2/anuncios'));
+app.use('/apiv2/usuarios', require('./routes/apiv2/usuarios'));
+app.use('/apiv2/tokens', require('./routes/apiv2/pushtokens'));
+app.use('/apiv2', require('./routes/apiv2/autenticacion'));
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {

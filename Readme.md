@@ -60,21 +60,21 @@ Es posible ejecutar nodepop en modo desarrollo de la siguiente forma:
 
 A continuación se indicará las distintas operaciones y resultados que pueden realizarse y obtenerse en nodepop.
 
+Todas las llamadas al API **deben** tener un parámetro pasado en la cabecera que se denomine **idioma** para seleccionar el idioma de los mensajes de error. Sus posibles valores son: **es** (Español) o **en** (inglés).
+
 ### Registro de usuarios
 
 Para poder registrar un nuevo usuario, se debe ejecutar la siguiente llamada de tipo POST como en el siguiente ejemplo:
 
-*http://localhost:3001/apiv1/usuarios/es/registrarUsuario?nombre=usr1&mail=mail@usr1.com&password=passUsr1*
+*http://localhost:3001/apiv2/usuarios/registrarUsuario?nombre=usr1&mail=mail@usr1.com&password=passUsr1*
 
 En esta llamada existen los siguientes parámetros:
-
-**es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
 
 **nombre-->** Indica el nombre con el que se registra el usuario.
 
 **mail-->** Indica la dirección de correo con la que se registra el usuario. Se comprueba que se trata de un mail correcto y bien formado.
 
-**pass-->** Indica el password para el usuario. Se almacenará encriptado en base de datos.
+**password-->** Indica el password para el usuario. Se almacenará encriptado en base de datos.
 
 Las posibles salidas de esta llamada son:
 
@@ -100,15 +100,13 @@ error: {
 
 Para poder realizar una autenticación de un usuario, hay que hacer una llamada de tipo POST como en el siguiente ejemplo:
 
-*http://localhost:3001/apiv1/es/autenticacion?mail=mail@usr1.com&password=passUsr1*
+*http://localhost:3001/apiv2/autenticacion?mail=mail@usr1.com&password=passUsr1*
 
 En esta llamada existen los siguientes parámetros:
 
-**es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
-
 **mail-->** Indica la dirección de correo con la que se ha registrado el usuario. 
 
-**pass-->** Indica el password para el usuario.
+**password-->** Indica el password para el usuario.
 
 Las posibles salidas de esta llamada son:
 
@@ -131,15 +129,13 @@ error: {
 
 Para poder llevar a cabo un almacenamiento de tokens push, hay que hacer una llamada de tipo PUT como en el siguiente ejemplo:
 
-*http://localhost:3001/apiv1/tokens/es/registrarToken?token=pushtoken&usuario=usr1*
+*http://localhost:3001/apiv2/tokens/registrarToken?token=pushtoken&usuario=usr1*
 
 En esta llamada existen los siguientes parámetros:
 
-**es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
-
 **token-->** Indica el token push que se desea almacenar en la base de datos.
 
-**pass-->** Indica el usuario que asociado al token a almacenar.
+**usuario-->** Indica el usuario que asociado al token a almacenar.
 
 Las posibles salidas de esta llamada son:
 
@@ -168,11 +164,9 @@ A continuación se listarán todas las operaciones que pueden llevarse a cabo co
 
 Para poder listar los anuncios almacenados, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
-*http://localhost:3001/apiv1/anuncios/es/listaAnuncios?nombre=articulo1&venta=true&precio=10-50&tag=work&start=1&limit=2&sort=nombre&token=tokenusuario*
+*http://localhost:3001/apiv2/anuncios/listaAnuncios?nombre=articulo1&venta=true&precio=10-50&tag=work&start=1&limit=2&sort=nombre&token=tokenusuario*
 
 En esta llamada existen los siguientes parámetros:
-
-**es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
 
 **nombre-->** Indica la cadena de texto por la que debe comenzar el nombre del artículo.
 
@@ -215,11 +209,9 @@ error: {
 
 Para poder listar los tags almacenados, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
-*http://localhost:3001/apiv1/anuncios/es/listaTags?token=tokenusuario*
+*http://localhost:3001/apiv2/anuncios/listaTags?token=tokenusuario*
 
 En esta llamada existen los siguientes parámetros:
-
-**es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
 
 Las posibles salidas de esta llamada son:
 
@@ -242,7 +234,7 @@ error: {
 
 Para poder recuperar una imagen, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
-*http://localhost:3000/apiv1/anuncios/es/images/iphone.jpeg?token=tokenusuario*
+*http://localhost:3001/apiv2/anuncios/images/iphone.jpeg?token=tokenusuario*
 
 En esta llamada existen los siguientes parámetros:
 
