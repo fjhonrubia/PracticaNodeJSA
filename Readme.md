@@ -1,5 +1,17 @@
 # Nodepop APIv1 Instrucciones de uso
 
+## Aplicación desplegada
+
+La aplicación se encuentra desplegada en la siguiente URL:
+
+*http://fjhonrubia.cloudapp.net*
+
+Para poder realizar las pruebas de una forma más sencilla para el ejercicio 1, puede usarse el fichero *nodepop.json* para *iodocs* que se encuentra ubicado en el directorio *nodepop/iodocs/*
+
+Para comprobar el ejercicio 2, es posible acceder a la siguiente dirección IP:
+
+*http://23.99.213.192/*
+
 ## Instalación
 
 Para llevar a cabo la instalación de Nodepop hace falta ejecutar el siguiente comando:
@@ -52,7 +64,7 @@ A continuación se indicará las distintas operaciones y resultados que pueden r
 
 Para poder registrar un nuevo usuario, se debe ejecutar la siguiente llamada de tipo POST como en el siguiente ejemplo:
 
-*http://localhost:3001/apiv1/usuarios/es/registrarUsuario?nombre=usr1&mail=mail@usr1.com&pass=passUsr1*
+*http://localhost:3001/apiv1/usuarios/es/registrarUsuario?nombre=usr1&mail=mail@usr1.com&password=passUsr1*
 
 En esta llamada existen los siguientes parámetros:
 
@@ -88,7 +100,7 @@ error: {
 
 Para poder realizar una autenticación de un usuario, hay que hacer una llamada de tipo POST como en el siguiente ejemplo:
 
-*http://localhost:3001/apiv1/es/autenticacion?mail=mail@usr1.com&pass=passUsr1*
+*http://localhost:3001/apiv1/es/autenticacion?mail=mail@usr1.com&password=passUsr1*
 
 En esta llamada existen los siguientes parámetros:
 
@@ -146,7 +158,13 @@ error: {
 	}
 }
 
-### Listado de anuncios
+### Anuncios 
+
+A continuación se listarán todas las operaciones que pueden llevarse a cabo con anuncios. Para todas ellas hay que especificar el siguiente parámetro:
+
+**token-->**Indica el valor del token del usuario.
+
+#### Listado de anuncios
 
 Para poder listar los anuncios almacenados, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
@@ -167,7 +185,6 @@ En esta llamada existen los siguientes parámetros:
 				<Número1>- : Busca los artículos cuyo precio mínimo es Número1
 				
 **tag-->** Indica el tag que tiene que contener el artículo.
-**token-->** Indica el valor del token del usuario que realiza la petición.
 
 *Opciones de paginación*
 
@@ -194,7 +211,7 @@ error: {
 	}
 }
 
-### Listado de tags
+#### Listado de tags
 
 Para poder listar los tags almacenados, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
@@ -203,8 +220,6 @@ Para poder listar los tags almacenados, hay que hacer una llamada de tipo GET co
 En esta llamada existen los siguientes parámetros:
 
 **es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
-
-**token-->** Indica el valor del token del usuario que realiza la petición.
 
 Las posibles salidas de esta llamada son:
 
@@ -223,7 +238,7 @@ error: {
 	}
 }
 
-### Recuperación de imágenes
+#### Recuperación de imágenes
 
 Para poder recuperar una imagen, hay que hacer una llamada de tipo GET como la del siguiente ejemplo:
 
@@ -234,8 +249,6 @@ En esta llamada existen los siguientes parámetros:
 **es-->**  Indica el idioma de los mensajes de error que se obtienen. En este caso solamente son posibles los valores **es** (español) o **en** (inglés).
 
 **imagen-->**  Indica el nombre de la imagen que se quiere recuperar.
-
-**token-->** Indica el valor del token del usuario que realiza la petición.
 
 Las posibles salidas de esta llamada son:
 

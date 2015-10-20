@@ -2,7 +2,7 @@
 	"name": "nodepop",
 	"description": "Nodepop API",
 	"protocol": "rest",
-	"basePath": "http://localhost:3001",
+	"basePath": "http://fjhonrubia.cloudapp.net",
 	"publicPath": "/apiv1",
 	"resources" : {
 		"Usuarios": {
