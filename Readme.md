@@ -8,6 +8,20 @@ La aplicación se encuentra desplegada en la siguiente URL:
 
 Para poder realizar las pruebas de una forma más sencilla para el ejercicio 1, puede usarse el fichero *nodepop.json* para *iodocs* que se encuentra ubicado en el directorio *nodepop/iodocs/*
 
+Para poder recuperar una imagen, primero hay que autentificarse con un usuario que se encuentre registrado por ejemplo:
+
+*fjhonrubia.cloudapp.net/apiv2/autenticacion?mail=fjhonrubia@mail.com&password=fjhonrubia*
+
+Esto proporcionará un token que hay que utilizar en la llamada de la recuperación de la imagen que será de la siguiente forma:
+
+*fjhonrubia.cloudapp.net/apiv2/anuncios/images/iphone.jpeg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NjI5MTM2Mjc5NmQ2N2Q2NTRlN2E4ZWEiLCJub21icmUiOiJmamhvbnJ1YmlhIiwibWFpbCI6ImZqaG9ucnViaWFAbWFpbC5jb20iLCJwYXNzIjoiNWQ5NDFhMzYwNGUwYzc0MzFiY2Q2ZmY5ODYzN2M4MjBlMWE5ODljNGZiNzI4YzMyZDlkYzY4ZmZiNGI3MjExYSIsIl9fdiI6MH0.pEoYM3CK0MLaQfPJA5ipwCCgIliSYqGKp0FC4bkGsLk*
+
+Existen dos imágenes para poder recuperar:
+
+iphone.jpeg
+bicicleta.jpeg
+
+
 Para comprobar el ejercicio 2, es posible acceder a la siguiente dirección IP:
 
 *http://23.99.213.192/*
